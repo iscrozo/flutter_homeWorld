@@ -1,30 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:holaWorld/background.dart';
+import 'package:holaWorld/description_place.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(MaterialApp(
+    title:"Flutter_reto2",
+    home: Scaffold(
+      appBar: AppBar(
+        title: Text("test")
+      ),
+      body: new DescriptionPlace(),
+    ),
+  ));
 }
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: Scaffold(
-        appBar: AppBar(
-          // Zona barra Superior
-          title : Text("Hello World")
-        ),
-        body: Center(
-          // contenido de la pantalla
-          child: Text("Hola Mundo Child"),
-        ) ,
-      )
-      //MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
 
