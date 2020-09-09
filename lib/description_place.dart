@@ -1,13 +1,48 @@
 import 'package:flutter/material.dart';
+import 'package:holaWorld/review.dart';
 
 class DescriptionPlace extends StatelessWidget {
+
+  String gsNamePlace;
+  int giCountStars;
+  String gsDescriptionPlace ;
+
+  // crear un constructor
+
+  DescriptionPlace(this.gsNamePlace, this.giCountStars, this.gsDescriptionPlace);
+
+
+
   @override
   Widget build(BuildContext context) {
 
-    //variable estrella
+  // objeto estrella mitad
+    final star_half = Container(
+      margin: EdgeInsets.only(
+        top:283.0,
+        right: 3.0,
+      ),
+      child: Icon(
+        Icons.star_half,
+        color: Color(0xFFf2C611),
+      ) ,
+    );
+  // objeto estrella bordeada
+    final star_border = Container(
+      margin: EdgeInsets.only(
+        top:283.0,
+        right: 3.0,
+      ),
+      child: Icon(
+        Icons.star_border,
+        color: Color(0xFFf2C611),
+      ) ,
+    );
+
+    // objeto estrella completa
     final star = Container(
       margin: EdgeInsets.only(
-        top:323.0,
+        top:283.0,
         right: 3.0,
       ),
       child: Icon(
@@ -25,8 +60,9 @@ class DescriptionPlace extends StatelessWidget {
         bottom: 10.0
       ),
       child: Text(
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. "
+        gsDescriptionPlace
       ,style: TextStyle(
+        fontFamily: "Lato",
         fontSize: 16.0,
         fontWeight: FontWeight.w300,
         color: Color(0xFF56575a)
@@ -34,18 +70,19 @@ class DescriptionPlace extends StatelessWidget {
       ),
     );
 
-    // varriable title
+    // variable title
     final title_stars = Row(
       children: <Widget>[
         Container(
           margin: EdgeInsets.only(
-            top: 320.0,
+            top: 280.0,
             left: 20.0,
             right: 20.0 ,
           ),
           child: Text(
-            "Duwili Ela",
+            gsNamePlace,
             style: TextStyle(
+              fontFamily: "Lato",
               fontSize: 30.0,
               fontWeight: FontWeight.w900,
             ),
@@ -57,7 +94,8 @@ class DescriptionPlace extends StatelessWidget {
           children: <Widget>[
             star,
             star,
-            star
+            star_half,
+            star_border
           ],
         ),
       ],
@@ -65,7 +103,8 @@ class DescriptionPlace extends StatelessWidget {
     return Column(
       children: <Widget>[
         title_stars,
-        txtDescription
+        txtDescription,
+        Review("assets/img/user.png")
       ],
     );
   }
