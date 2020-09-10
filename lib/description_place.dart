@@ -8,48 +8,10 @@ class DescriptionPlace extends StatelessWidget {
   String gsDescriptionPlace ;
 
   // crear un constructor
-
-  DescriptionPlace(this.gsNamePlace, this.giCountStars, this.gsDescriptionPlace);
-
-
+  DescriptionPlace(this.gsNamePlace, this.gsDescriptionPlace);
 
   @override
   Widget build(BuildContext context) {
-
-  // objeto estrella mitad
-    final star_half = Container(
-      margin: EdgeInsets.only(
-        top:283.0,
-        right: 3.0,
-      ),
-      child: Icon(
-        Icons.star_half,
-        color: Color(0xFFf2C611),
-      ) ,
-    );
-  // objeto estrella bordeada
-    final star_border = Container(
-      margin: EdgeInsets.only(
-        top:283.0,
-        right: 3.0,
-      ),
-      child: Icon(
-        Icons.star_border,
-        color: Color(0xFFf2C611),
-      ) ,
-    );
-
-    // objeto estrella completa
-    final star = Container(
-      margin: EdgeInsets.only(
-        top:283.0,
-        right: 3.0,
-      ),
-      child: Icon(
-        Icons.star,
-        color: Color(0xFFf2C611),
-      ) ,
-    );
 
     // variable descripcion
     final txtDescription = Container(
@@ -90,21 +52,13 @@ class DescriptionPlace extends StatelessWidget {
           ),
         ),
         // vamos a crear las estrellas
-        Row(
-          children: <Widget>[
-            star,
-            star,
-            star_half,
-            star_border
-          ],
-        ),
       ],
     );
     return Column(
       children: <Widget>[
         title_stars,
         txtDescription,
-        Review("assets/img/user.png")
+        Review(),
       ],
     );
   }

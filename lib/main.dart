@@ -10,13 +10,13 @@ void main() {
       appBar: AppBar(
         title: Text(
             "Home",
-          textAlign: TextAlign.center,
           style: TextStyle(
-            fontFamily: "Lato"
-          ),
-            )
+              fontFamily: "Lato"
+            ),
+          )
+        ,centerTitle: true,
       ),
-      body: new DescriptionPlace("Bogotá",4,gsDescription),
+      body: new DescriptionPlace("Bogotá",gsDescription),
     ),
   ));
 }
